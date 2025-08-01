@@ -1,0 +1,30 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Kiwi body -->
+  <ellipse cx="32" cy="40" rx="20" ry="16" fill="#00BFAE"/>
+  <ellipse cx="32" cy="40" rx="18" ry="14" fill="#5DF2D6"/>
+  
+  <!-- Kiwi head -->
+  <circle cx="32" cy="24" r="12" fill="#00BFAE"/>
+  <circle cx="32" cy="24" r="10" fill="#5DF2D6"/>
+  
+  <!-- Kiwi beak -->
+  <path d="M44 24 L48 20 L44 16 L40 20 Z" fill="#FFD600"/>
+  
+  <!-- Kiwi eyes -->
+  <circle cx="28" cy="22" r="2" fill="#212121"/>
+  <circle cx="36" cy="22" r="2" fill="#212121"/>
+  <circle cx="28.5" cy="21.5" r="0.5" fill="#FFFFFF"/>
+  <circle cx="36.5" cy="21.5" r="0.5" fill="#FFFFFF"/>
+  
+  <!-- Kiwi legs -->
+  <rect x="26" y="52" width="3" height="8" rx="1.5" fill="#FFD600"/>
+  <rect x="35" y="52" width="3" height="8" rx="1.5" fill="#FFD600"/>
+  
+  <!-- Kiwi feet -->
+  <path d="M24 60 L28 60 L26 58 Z" fill="#FFD600"/>
+  <path d="M33 60 L37 60 L35 58 Z" fill="#FFD600"/>
+  
+  <!-- Decorative fern leaves -->
+  <path d="M8 8 Q12 4 16 8 Q20 12 16 16 Q12 20 8 16 Q4 12 8 8" fill="#43A047" opacity="0.3"/>
+  <path d="M48 8 Q52 4 56 8 Q60 12 56 16 Q52 20 48 16 Q44 12 48 8" fill="#43A047" opacity="0.3"/>
+</svg> 

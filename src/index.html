@@ -6,30 +6,48 @@
   <title>KiwiLearn – Fun, Interactive Learning Platform for New Zealand Kids</title>
   <meta name="description" content="KiwiLearn is a supplementary learning platform for New Zealand kids, offering fun, interactive, and curriculum-aligned activities. Perfect for students, parents, and teachers to assign, track, and celebrate learning progress.">
   <meta name="keywords" content="KiwiLearn, New Zealand kids learning, curriculum-aligned activities, interactive learning platform, student progress tracking">
+  
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- External Libraries -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  
+  <!-- Styles -->
   <link href="/src/css/styles.css" rel="stylesheet">
 </head>
 <body class="bg-neutral-main font-primary text-gray-900">
-  <header class="bg-primary-main text-white rounded-b-2xl shadow-lg">
+  <!-- Skip to main content -->
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary-main text-white px-4 py-2 rounded-lg z-50">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="bg-primary-main text-white rounded-b-2xl shadow-lg sticky top-0 z-40">
     <nav class="container mx-auto flex items-center justify-between py-4 px-4 md:px-8">
       <div class="flex items-center gap-3">
-        <img src="/src/assets/kiwi-logo.svg" alt="KiwiLearn Logo" class="h-10 w-10 rounded-full bg-secondary-main p-1 shadow-md" />
+        <img src="/src/assets/kiwi-logo.svg" alt="KiwiLearn Logo" class="h-10 w-10 rounded-full bg-secondary-main p-1 shadow-md animate-pulse" />
         <span class="text-2xl font-extrabold tracking-tight font-primary">KiwiLearn</span>
       </div>
+      
       <ul class="hidden md:flex gap-6 text-lg font-bold">
-        <li><a href="#about" class="hover:bg-secondary-main hover:text-primary-dark px-4 py-2 rounded-lg transition">About</a></li>
-        <li><a href="#activities" class="hover:bg-secondary-main hover:text-primary-dark px-4 py-2 rounded-lg transition">Activities</a></li>
-        <li><a href="#features" class="hover:bg-secondary-main hover:text-primary-dark px-4 py-2 rounded-lg transition">Features</a></li>
-        <li><a href="#testimonials" class="hover:bg-secondary-main hover:text-primary-dark px-4 py-2 rounded-lg transition">Testimonials</a></li>
-        <li><a href="#contact" class="hover:bg-secondary-main hover:text-primary-dark px-4 py-2 rounded-lg transition">Contact</a></li>
+        <li><a href="#about" class="nav-item hover:bg-secondary-main hover:text-primary-dark transition">About</a></li>
+        <li><a href="#activities" class="nav-item hover:bg-secondary-main hover:text-primary-dark transition">Activities</a></li>
+        <li><a href="#features" class="nav-item hover:bg-secondary-main hover:text-primary-dark transition">Features</a></li>
+        <li><a href="#testimonials" class="nav-item hover:bg-secondary-main hover:text-primary-dark transition">Testimonials</a></li>
+        <li><a href="#contact" class="nav-item hover:bg-secondary-main hover:text-primary-dark transition">Contact</a></li>
       </ul>
-      <a href="#signup" class="hidden md:inline-block bg-secondary-main text-primary-dark font-bold px-6 py-2 rounded-full shadow-md hover:bg-secondary-light focus:outline-none focus:ring-2 focus:ring-secondary-dark transition">Sign Up</a>
+      
+      <a href="#signup" class="hidden md:inline-block btn btn-secondary">Sign Up</a>
+      
       <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary-dark" aria-label="Open menu">
-        <svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
       </button>
     </nav>
+    
     <div id="mobile-menu" class="hidden md:hidden bg-primary-main px-4 pb-4">
       <ul class="flex flex-col gap-2 text-lg font-bold">
         <li><a href="#about" class="block px-4 py-2 rounded-lg hover:bg-secondary-main hover:text-primary-dark transition">About</a></li>
@@ -37,116 +55,299 @@
         <li><a href="#features" class="block px-4 py-2 rounded-lg hover:bg-secondary-main hover:text-primary-dark transition">Features</a></li>
         <li><a href="#testimonials" class="block px-4 py-2 rounded-lg hover:bg-secondary-main hover:text-primary-dark transition">Testimonials</a></li>
         <li><a href="#contact" class="block px-4 py-2 rounded-lg hover:bg-secondary-main hover:text-primary-dark transition">Contact</a></li>
-        <li><a href="#signup" class="block bg-secondary-main text-primary-dark font-bold px-4 py-2 rounded-full shadow-md hover:bg-secondary-light focus:outline-none focus:ring-2 focus:ring-secondary-dark transition">Sign Up</a></li>
+        <li><a href="#signup" class="block btn btn-secondary">Sign Up</a></li>
       </ul>
     </div>
   </header>
-  <main class="container mx-auto max-w-[1200px] px-4 md:px-8">
+
+  <main id="main" class="container mx-auto max-w-[1200px] px-4 md:px-8">
     <!-- Hero Section -->
-    <section class="mt-8 md:mt-16 flex flex-col md:flex-row items-center gap-8 md:gap-16">
+    <section class="mt-8 md:mt-16 flex flex-col md:flex-row items-center gap-8 md:gap-16" data-aos="fade-up">
       <div class="flex-1">
-        <h1 class="text-4xl md:text-5xl font-extrabold font-primary leading-tight mb-4 text-primary-dark">Unlock Your Child's Full Potential with KiwiLearn</h1>
-        <p class="text-lg md:text-xl font-secondary mb-6 text-primary-dark">Fun, Interactive & Curriculum-Aligned Activities for New Zealand Kids</p>
-        <a href="#signup" class="inline-block bg-primary-main text-white font-bold px-8 py-4 rounded-full shadow-lg hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-secondary-dark transition">Get Started</a>
+        <h1 class="text-h1 text-primary-dark mb-4 hero-title">Unlock Your Child's Full Potential with KiwiLearn</h1>
+        <p class="text-body text-primary-dark mb-6 hero-subtitle">Fun, Interactive & Curriculum-Aligned Activities for New Zealand Kids</p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#signup" class="btn btn-primary hero-cta">Get Started</a>
+          <a href="#activities" class="btn btn-secondary">Explore Activities</a>
+        </div>
+        
+        <!-- Progress Preview -->
+        <div class="mt-8 p-4 bg-white rounded-xl shadow-md">
+          <h4 class="text-h5 text-primary-main mb-3">Sample Progress</h4>
+          <div class="space-y-3">
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span>Math Skills</span>
+                <span>85%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" data-progress="85"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span>Reading</span>
+                <span>92%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" data-progress="92"></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+      
       <div class="flex-1 flex justify-center">
-        <img src="/src/assets/hero-kiwi.svg" alt="Kiwi bird with books and ferns" class="w-72 md:w-96 rounded-2xl shadow-xl border-4 border-secondary-main" />
+        <img src="/src/assets/hero-kiwi.svg" alt="Kiwi bird with books and ferns" class="w-72 md:w-96 rounded-2xl shadow-xl border-4 border-secondary-main hero-image animate-float" />
       </div>
     </section>
+
     <!-- About Section -->
-    <section id="about" class="mt-16 md:mt-24 bg-white rounded-2xl shadow-lg p-8 md:p-12 flex flex-col md:flex-row gap-8 items-center">
+    <section id="about" class="mt-16 md:mt-24 card p-8 md:p-12 flex flex-col md:flex-row gap-8 items-center" data-aos="fade-up">
       <div class="flex-1">
-        <h2 class="text-3xl font-extrabold font-primary mb-4 text-primary-main">About KiwiLearn</h2>
-        <p class="text-lg font-secondary text-gray-800">Welcome to KiwiLearn – your child's new favorite learning platform! We are excited to provide a fun, interactive, and curriculum-aligned learning experience for all New Zealand kids. <br><br>We understand that learning doesn't just happen in the classroom and that's why we are here to support your child's educational journey outside of school. Our activities are designed to make learning enjoyable, engaging, and effective. From math to science, English to social studies, we have a wide range of activities that will keep your child entertained while they learn.<br><br>But it's not just about the kids, teachers and parents play a crucial role in a child's education and that's why we have included tools for both of you. Our platform allows teachers to easily assign and track activities for their students, saving them time and effort. Parents, you can also monitor your child's progress and offer support and encouragement along the way.</p>
+        <h2 class="text-h2 text-primary-main mb-4">About KiwiLearn</h2>
+        <p class="text-body text-gray-800 mb-6">Welcome to KiwiLearn – your child's new favorite learning platform! We are excited to provide a fun, interactive, and curriculum-aligned learning experience for all New Zealand kids.</p>
+        <p class="text-body text-gray-800 mb-6">We understand that learning doesn't just happen in the classroom and that's why we are here to support your child's educational journey outside of school. Our activities are designed to make learning enjoyable, engaging, and effective.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="badge">Math</span>
+          <span class="badge">Science</span>
+          <span class="badge">English</span>
+          <span class="badge">Social Studies</span>
+        </div>
       </div>
       <div class="flex-1 flex justify-center">
         <img src="/src/assets/about-fern.svg" alt="New Zealand fern illustration" class="w-56 md:w-72 rounded-xl" />
       </div>
     </section>
+
     <!-- Activities Section -->
-    <section id="activities" class="mt-16 md:mt-24">
-      <h2 class="text-3xl font-extrabold font-primary mb-6 text-primary-main">Activities</h2>
+    <section id="activities" class="mt-16 md:mt-24" data-aos="fade-up">
+      <h2 class="text-h2 text-primary-main mb-6 text-center">Interactive Activities</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col gap-4">
-          <h3 class="text-xl font-bold text-accent-main">Quizzes</h3>
-          <p class="text-gray-800">Our quizzes are a great way for kids to test their knowledge on a particular topic. They are interactive, with colorful images and easy-to-understand questions. Plus, with immediate feedback, kids can track their progress and see where they need to focus more.</p>
+        <div class="card interactive-card activity-card" data-activity="Quiz">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-12 h-12 bg-accent-main rounded-full flex items-center justify-center">
+              <span class="text-white font-bold text-xl">?</span>
+            </div>
+            <h3 class="text-h4 text-accent-main">Quizzes</h3>
+          </div>
+          <p class="text-body text-gray-800 mb-4">Our quizzes are a great way for kids to test their knowledge on a particular topic. They are interactive, with colorful images and easy-to-understand questions.</p>
+          <div class="flex justify-between items-center">
+            <span class="text-caption text-gray-600">Immediate feedback</span>
+            <span class="badge">Coming Soon</span>
+          </div>
         </div>
-        <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col gap-4">
-          <h3 class="text-xl font-bold text-accent-main">Games</h3>
-          <p class="text-gray-800">Learning should be fun and that's why KiwiLearn offers a variety of educational games that are both entertaining and educational. These games cover different subjects and are a great way to make learning enjoyable.</p>
+
+        <div class="card interactive-card activity-card" data-activity="Game">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-12 h-12 bg-secondary-main rounded-full flex items-center justify-center">
+              <span class="text-primary-dark font-bold text-xl">🎮</span>
+            </div>
+            <h3 class="text-h4 text-secondary-main">Games</h3>
+          </div>
+          <p class="text-body text-gray-800 mb-4">Learning should be fun and that's why KiwiLearn offers a variety of educational games that are both entertaining and educational.</p>
+          <div class="flex justify-between items-center">
+            <span class="text-caption text-gray-600">Multiple subjects</span>
+            <span class="badge">Coming Soon</span>
+          </div>
         </div>
-        <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col gap-4">
-          <h3 class="text-xl font-bold text-accent-main">Printable Worksheets</h3>
-          <p class="text-gray-800">Download and print worksheets for offline practice. Perfect for reinforcing learning at home or in the classroom.</p>
+
+        <div class="card interactive-card activity-card" data-activity="Worksheet">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-12 h-12 bg-primary-main rounded-full flex items-center justify-center">
+              <span class="text-white font-bold text-xl">📄</span>
+            </div>
+            <h3 class="text-h4 text-primary-main">Printable Worksheets</h3>
+          </div>
+          <p class="text-body text-gray-800 mb-4">Download and print worksheets for offline practice. Perfect for reinforcing learning at home or in the classroom.</p>
+          <div class="flex justify-between items-center">
+            <span class="text-caption text-gray-600">Offline practice</span>
+            <span class="badge">Coming Soon</span>
+          </div>
         </div>
-        <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col gap-4">
-          <h3 class="text-xl font-bold text-accent-main">Progress Tracking</h3>
-          <p class="text-gray-800">Students, parents, and teachers can easily track progress and celebrate achievements with our visual dashboards and points system.</p>
+
+        <div class="card interactive-card activity-card" data-activity="Progress">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-12 h-12 bg-success rounded-full flex items-center justify-center">
+              <span class="text-white font-bold text-xl">📊</span>
+            </div>
+            <h3 class="text-h4 text-success">Progress Tracking</h3>
+          </div>
+          <p class="text-body text-gray-800 mb-4">Students, parents, and teachers can easily track progress and celebrate achievements with our visual dashboards and points system.</p>
+          <div class="flex justify-between items-center">
+            <span class="text-caption text-gray-600">Visual dashboards</span>
+            <span class="badge">Coming Soon</span>
+          </div>
         </div>
       </div>
     </section>
+
     <!-- Features Section -->
-    <section id="features" class="mt-16 md:mt-24 bg-white rounded-2xl shadow-lg p-8 md:p-12">
-      <h2 class="text-3xl font-extrabold font-primary mb-6 text-primary-main">Features</h2>
-      <ul class="list-disc pl-6 text-lg text-gray-800 space-y-2">
-        <li>Activity Assignment: Assign fun, curriculum-aligned activities to students or children with just a few clicks.</li>
-        <li>Student Activity Tracking: Monitor progress and celebrate achievements with easy-to-read dashboards.</li>
-        <li>Quizzes: Interactive quizzes help reinforce learning and boost confidence.</li>
-        <li>Games: Educational games make learning exciting and memorable.</li>
-        <li>Printable Worksheets: Download and print worksheets for offline practice.</li>
-        <li>User Accounts: Personalized accounts for students, parents, and teachers.</li>
-        <li>Progress Dashboards: Visualize learning journeys and milestones.</li>
-        <li>NZ Curriculum Alignment: All activities are designed to match the New Zealand curriculum.</li>
-      </ul>
+    <section id="features" class="mt-16 md:mt-24 card p-8 md:p-12" data-aos="fade-up">
+      <h2 class="text-h2 text-primary-main mb-6">Key Features</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="space-y-4">
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 bg-primary-main rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+              <span class="text-white text-sm font-bold">1</span>
+            </div>
+            <div>
+              <h4 class="text-h5 text-primary-main mb-1">Activity Assignment</h4>
+              <p class="text-body text-gray-700">Assign fun, curriculum-aligned activities to students with just a few clicks.</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 bg-secondary-main rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+              <span class="text-primary-dark text-sm font-bold">2</span>
+            </div>
+            <div>
+              <h4 class="text-h5 text-secondary-main mb-1">Progress Tracking</h4>
+              <p class="text-body text-gray-700">Monitor progress and celebrate achievements with easy-to-read dashboards.</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 bg-accent-main rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+              <span class="text-white text-sm font-bold">3</span>
+            </div>
+            <div>
+              <h4 class="text-h5 text-accent-main mb-1">Interactive Learning</h4>
+              <p class="text-body text-gray-700">Engaging quizzes and games make learning exciting and memorable.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="space-y-4">
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 bg-success rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+              <span class="text-white text-sm font-bold">4</span>
+            </div>
+            <div>
+              <h4 class="text-h5 text-success mb-1">User Accounts</h4>
+              <p class="text-body text-gray-700">Personalized accounts for students, parents, and teachers.</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 bg-warning rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+              <span class="text-white text-sm font-bold">5</span>
+            </div>
+            <div>
+              <h4 class="text-h5 text-warning mb-1">NZ Curriculum</h4>
+              <p class="text-body text-gray-700">All activities are designed to match the New Zealand curriculum.</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 bg-primary-light rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+              <span class="text-primary-dark text-sm font-bold">6</span>
+            </div>
+            <div>
+              <h4 class="text-h5 text-primary-light mb-1">Printable Resources</h4>
+              <p class="text-body text-gray-700">Download and print worksheets for offline practice.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
+
     <!-- Testimonials Section -->
-    <section id="testimonials" class="mt-16 md:mt-24">
-      <h2 class="text-3xl font-extrabold font-primary mb-6 text-primary-main">Testimonials</h2>
+    <section id="testimonials" class="mt-16 md:mt-24" data-aos="fade-up">
+      <h2 class="text-h2 text-primary-main mb-6 text-center">What Our Community Says</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <blockquote class="bg-white rounded-2xl shadow-lg p-6 flex flex-col gap-2 border-l-4 border-primary-main">
-          <p class="text-lg font-secondary">"KiwiLearn has been a game-changer for my child's learning journey. As a busy parent, it's sometimes hard to find the time and resources to help my child with their studies. But with KiwiLearn, I feel at ease knowing that my child is getting the extra support they need in a fun and engaging way. The platform's interactive lessons and activities have made learning a joy for my child, and I've seen a significant improvement in their grades. Thank you, KiwiLearn! You have my full recommendation."</p>
-          <span class="text-accent-main font-bold">– Parent</span>
+        <blockquote class="card testimonial-card active">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-accent-main rounded-full flex items-center justify-center">
+              <span class="text-white font-bold">👨‍👩‍👧‍👦</span>
+            </div>
+            <div>
+              <p class="text-body font-secondary">"KiwiLearn has been a game-changer for my child's learning journey. The platform's interactive lessons have made learning a joy!"</p>
+              <span class="text-accent-main font-bold text-caption">– Parent</span>
+            </div>
+          </div>
         </blockquote>
-        <blockquote class="bg-white rounded-2xl shadow-lg p-6 flex flex-col gap-2 border-l-4 border-primary-main">
-          <p class="text-lg font-secondary">"I've been using KiwiLearn with my students for the past year and I have seen a noticeable improvement in their learning. The platform is engaging and fun, making it easy for my students to stay focused and motivated to learn. The interactive lessons and games make learning enjoyable while still being educational. I highly recommend KiwiLearn for any teacher looking for a fun and effective supplementary tool."</p>
-          <span class="text-accent-main font-bold">– Teacher</span>
+        
+        <blockquote class="card testimonial-card">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-primary-main rounded-full flex items-center justify-center">
+              <span class="text-white font-bold">👩‍🏫</span>
+            </div>
+            <div>
+              <p class="text-body font-secondary">"I've seen a noticeable improvement in my students' learning. The platform is engaging and fun!"</p>
+              <span class="text-primary-main font-bold text-caption">– Teacher</span>
+            </div>
+          </div>
         </blockquote>
-        <blockquote class="bg-white rounded-2xl shadow-lg p-6 flex flex-col gap-2 border-l-4 border-primary-main">
-          <p class="text-lg font-secondary">"KiwiLearn was a total game-changer for me! Learning used to be a chore, but now it's so much fun. The videos and games are super engaging and the tutors are awesome!"</p>
-          <span class="text-accent-main font-bold">– Student</span>
+        
+        <blockquote class="card testimonial-card">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-secondary-main rounded-full flex items-center justify-center">
+              <span class="text-primary-dark font-bold">👦</span>
+            </div>
+            <div>
+              <p class="text-body font-secondary">"KiwiLearn was a total game-changer for me! Learning used to be a chore, but now it's so much fun!"</p>
+              <span class="text-secondary-main font-bold text-caption">– Student</span>
+            </div>
+          </div>
         </blockquote>
       </div>
     </section>
+
     <!-- Contact Section -->
-    <section id="contact" class="mt-16 md:mt-24 bg-white rounded-2xl shadow-lg p-8 md:p-12">
-      <h2 class="text-3xl font-extrabold font-primary mb-6 text-primary-main">Contact Us</h2>
-      <p class="text-lg font-secondary mb-6">We love hearing from our KiwiLearn community! Whether you are a parent, teacher, or student, we are always here to answer any questions or listen to your feedback. Our goal is to provide a fun and effective learning platform for our young Kiwi learners, and your input helps us achieve that goal.</p>
+    <section id="contact" class="mt-16 md:mt-24 card p-8 md:p-12" data-aos="fade-up">
+      <h2 class="text-h2 text-primary-main mb-6">Contact Us</h2>
+      <p class="text-body font-secondary mb-6">We love hearing from our KiwiLearn community! Whether you are a parent, teacher, or student, we are always here to answer any questions or listen to your feedback.</p>
+      
       <form class="flex flex-col gap-4 max-w-lg" autocomplete="off" novalidate>
-        <label for="name" class="font-bold text-primary-main">Name</label>
-        <input id="name" name="name" type="text" required class="bg-neutral-main rounded-xl px-4 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-primary-main" placeholder="Your name" />
-        <label for="email" class="font-bold text-primary-main">Email</label>
-        <input id="email" name="email" type="email" required class="bg-neutral-main rounded-xl px-4 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-primary-main" placeholder="you@email.com" />
-        <label for="message" class="font-bold text-primary-main">Message</label>
-        <textarea id="message" name="message" rows="4" required class="bg-neutral-main rounded-xl px-4 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-primary-main" placeholder="How can we help you?"></textarea>
-        <button type="submit" class="bg-primary-main text-white font-bold px-8 py-3 rounded-full shadow-lg hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-secondary-dark transition">Send Message</button>
+        <div>
+          <label for="name" class="block font-bold text-primary-main mb-2">Name</label>
+          <input id="name" name="name" type="text" required class="input w-full" placeholder="Your name" />
+        </div>
+        
+        <div>
+          <label for="email" class="block font-bold text-primary-main mb-2">Email</label>
+          <input id="email" name="email" type="email" required class="input w-full" placeholder="you@email.com" />
+        </div>
+        
+        <div>
+          <label for="message" class="block font-bold text-primary-main mb-2">Message</label>
+          <textarea id="message" name="message" rows="4" required class="input w-full" placeholder="How can we help you?"></textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Send Message</button>
       </form>
     </section>
+
     <!-- Sign Up Section -->
-    <section id="signup" class="mt-16 md:mt-24 mb-16 md:mb-24 bg-secondary-main rounded-2xl shadow-lg p-8 md:p-12 flex flex-col items-center text-center">
-      <h2 class="text-3xl font-extrabold font-primary mb-4 text-primary-dark">Join KiwiLearn Today!</h2>
-      <p class="text-lg font-secondary mb-6 text-primary-dark">Sign up now and unlock a world of interactive and engaging learning resources specially designed for New Zealand kids.</p>
-      <a href="#" class="inline-block bg-primary-main text-white font-bold px-8 py-4 rounded-full shadow-lg hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-secondary-dark transition">Sign Up</a>
+    <section id="signup" class="mt-16 md:mt-24 mb-16 md:mb-24 bg-secondary-main rounded-2xl shadow-lg p-8 md:p-12 flex flex-col items-center text-center" data-aos="fade-up">
+      <h2 class="text-h2 text-primary-dark mb-4">Join KiwiLearn Today!</h2>
+      <p class="text-body mb-6 text-primary-dark">Sign up now and unlock a world of interactive and engaging learning resources specially designed for New Zealand kids.</p>
+      
+      <form class="flex flex-col sm:flex-row gap-4 w-full max-w-md" autocomplete="off" novalidate>
+        <input type="email" name="email" required class="input flex-1" placeholder="Enter your email" />
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+      </form>
+      
+      <p class="text-caption text-primary-dark mt-4">Free to start • No credit card required</p>
     </section>
   </main>
+
+  <!-- Footer -->
   <footer class="bg-primary-main text-white py-6 mt-8 rounded-t-2xl shadow-inner">
     <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-4 md:px-8">
-      <div class="flex items-center gap-2">
+      <div class="flex items-center gap-2 mb-4 md:mb-0">
         <img src="/src/assets/kiwi-logo.svg" alt="KiwiLearn Logo" class="h-8 w-8 rounded-full bg-secondary-main p-1" />
         <span class="font-bold text-lg">KiwiLearn</span>
       </div>
       <span class="text-sm">&copy; 2025 KiwiLearn. All rights reserved.</span>
     </div>
   </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="/src/js/main.js"></script>
 </body>
-</html>
+</html> 
