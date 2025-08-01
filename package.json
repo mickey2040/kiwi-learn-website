@@ -1,0 +1,28 @@
+{
+  "name": "kiwi-learn-website",
+  "version": "1.0.0",
+  "description": "KiwiLearn – Fun, Interactive Learning Platform for New Zealand Kids.",
+  "main": "src/js/main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "KiwiLearn",
+    "New Zealand",
+    "learning",
+    "kids",
+    "education",
+    "curriculum-aligned",
+    "interactive"
+  ],
+  "author": "KiwiLearn Team",
+  "license": "MIT",
+  "dependencies": {
+    "tailwindcss": "^3.4.1"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}
